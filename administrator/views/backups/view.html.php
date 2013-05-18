@@ -55,7 +55,7 @@ class BackupViewBackups extends JViewLegacy
 		$state	= $this->get('State');
 		$canDo	= BackupHelper::getActions($state->get('filter.category_id'));
 
-		JToolBarHelper::title(JText::_('com_smart_backup_TITLE_BACKUPS'), 'backups.png');
+		JToolBarHelper::title(JText::_('COM_SMART_BACKUP_TITLE_BACKUPS'), 'backups.png');
 
         //Check if the form exists before showing the add/edit buttons
         $formPath = JPATH_COMPONENT_ADMINISTRATOR.'/views/backup';
@@ -130,9 +130,9 @@ class BackupViewBackups extends JViewLegacy
 		'a.id' => JText::_('JGRID_HEADING_ID'),
 		'a.ordering' => JText::_('JGRID_HEADING_ORDERING'),
 		'a.state' => JText::_('JSTATUS'),
-		'a.checked_out' => JText::_('com_smart_backup_BACKUPS_CHECKED_OUT'),
-		'a.checked_out_time' => JText::_('com_smart_backup_BACKUPS_CHECKED_OUT_TIME'),
-		'a.created_by' => JText::_('com_smart_backup_BACKUPS_CREATED_BY'),
+		'a.checked_out' => JText::_('COM_SMART_BACKUP_BACKUPS_CHECKED_OUT'),
+		'a.checked_out_time' => JText::_('COM_SMART_BACKUP_BACKUPS_CHECKED_OUT_TIME'),
+		'a.created_by' => JText::_('COM_SMART_BACKUP_BACKUPS_CREATED_BY'),
 		);
 	}
 

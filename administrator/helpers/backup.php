@@ -21,11 +21,10 @@ class BackupHelper
 	public static function addSubmenu($vName = '')
 	{
 		JHtmlSidebar::addEntry(
-			JText::_('com_smart_backup_TITLE_BACKUPS'),
+			JText::_('COM_SMART_BACKUP_TITLE_BACKUPS'),
 			'index.php?option=com_smart_backup&view=backups',
 			$vName == 'backups'
 		);
-
 	}
 
 	/**

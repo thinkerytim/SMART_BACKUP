@@ -37,7 +37,7 @@
     <administration>
         <menu img="components/com_smart_backup/assets/images/s_com_smart_backup.png" >com_smart_backup</menu>
         <submenu>
-			<menu link="option=com_smart_backup&amp;view=backups" view="backups" img="components/com_smart_backup/assets/images/s_backups.png" alt="Backup/Backups">com_smart_backup_TITLE_BACKUPS</menu>
+			<menu link="option=com_smart_backup&amp;view=backups" view="backups" img="components/com_smart_backup/assets/images/s_backups.png" alt="Backup/Backups">COM_SMART_BACKUP_TITLE_BACKUPS</menu>
         </submenu>
         <files folder="administrator">
             <filename>access.xml</filename>

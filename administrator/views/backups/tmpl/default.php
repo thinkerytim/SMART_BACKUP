@@ -111,7 +111,7 @@ if (!empty($this->extra_sidebar)) {
                 <?php endif; ?>
                     
 				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'com_smart_backup_BACKUPS_CREATED_BY', 'a.created_by', $listDirn, $listOrder); ?>
+				<?php echo JHtml::_('grid.sort',  'COM_SMART_BACKUP_BACKUPS_CREATED_BY', 'a.created_by', $listDirn, $listOrder); ?>
 				</th>
                     
                     

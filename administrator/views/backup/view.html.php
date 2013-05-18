@@ -55,7 +55,7 @@ class BackupViewBackup extends JViewLegacy
         }
 		$canDo		= BackupHelper::getActions();
 
-		JToolBarHelper::title(JText::_('com_smart_backup_TITLE_BACKUP'), 'backup.png');
+		JToolBarHelper::title(JText::_('COM_SMART_BACKUP_TITLE_BACKUP'), 'backup.png');
 
 		// If not checked out, can save the item.
 		if (!$checkedOut && ($canDo->get('core.edit')||($canDo->get('core.create'))))

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
 	<fieldset name="component"
-		label="com_smart_backup_COMPONENT_LABEL"
-		description="com_smart_backup_COMPONENT_DESC"
+		label="COM_SMART_BACKUP_COMPONENT_LABEL"
+		description="COM_SMART_BACKUP_COMPONENT_DESC"
 	>
 
         <field name="test"
              type="radio"
              default="1"
-             label="com_smart_backup_TEST_LABEL"
-             description="com_smart_backup_TEST_DESC">
+             label="COM_SMART_BACKUP_TEST_LABEL"
+             description="COM_SMART_BACKUP_TEST_DESC">
                  <option value="0">JHIDE</option>
                  <option value="1">JSHOW</option>
          </field>
