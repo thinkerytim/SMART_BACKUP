@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
 	<fieldset name="component"
-		label="COM_BACKUP_COMPONENT_LABEL"
-		description="COM_BACKUP_COMPONENT_DESC"
+		label="com_smart_backup_COMPONENT_LABEL"
+		description="com_smart_backup_COMPONENT_DESC"
 	>
 
         <field name="test"
              type="radio"
              default="1"
-             label="COM_BACKUP_TEST_LABEL"
-             description="COM_BACKUP_TEST_DESC">
+             label="com_smart_backup_TEST_LABEL"
+             description="com_smart_backup_TEST_DESC">
                  <option value="0">JHIDE</option>
                  <option value="1">JSHOW</option>
          </field>
@@ -24,7 +24,7 @@
 		<field 
             name="rules" 
             type="rules"
-			component="com_backup"
+			component="com_smart_backup"
             class="inputbox"
 			filter="rules"
 			validate="rules"

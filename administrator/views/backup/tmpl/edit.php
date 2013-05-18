@@ -1,10 +1,10 @@
 <?php
 /**
  * @version     1.0.0
- * @package     com_backup
+ * @package     com_smart_backup
  * @copyright   Copyright (C) 2013. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
- * @author      Julio Delgado <pbass98@gmail.com> - http://
+ * @author      The Thinkery, LLC <info@thethinkery.net> - http://www.thethinkery.net
  */
 // no direct access
 defined('_JEXEC') or die;
@@ -17,7 +17,7 @@ JHtml::_('behavior.keepalive');
 
 // Import CSS
 $document = JFactory::getDocument();
-$document->addStyleSheet('components/com_backup/assets/css/backup.css');
+$document->addStyleSheet('components/com_smart_backup/assets/css/backup.css');
 ?>
 <script type="text/javascript">
     js = jQuery.noConflict();
@@ -42,7 +42,7 @@ $document->addStyleSheet('components/com_backup/assets/css/backup.css');
     }
 </script>
 
-<form action="<?php echo JRoute::_('index.php?option=com_backup&layout=edit&id=' . (int) $this->item->id); ?>" method="post" enctype="multipart/form-data" name="adminForm" id="backup-form" class="form-validate">
+<form action="<?php echo JRoute::_('index.php?option=com_smart_backup&layout=edit&id=' . (int) $this->item->id); ?>" method="post" enctype="multipart/form-data" name="adminForm" id="backup-form" class="form-validate">
     <div class="row-fluid">
         <div class="span10 form-horizontal">
             <fieldset class="adminform">

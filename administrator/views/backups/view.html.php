@@ -1,10 +1,10 @@
 <?php
 /**
  * @version     1.0.0
- * @package     com_backup
+ * @package     com_smart_backup
  * @copyright   Copyright (C) 2013. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
- * @author      Julio Delgado <pbass98@gmail.com> - http://
+ * @author      The Thinkery, LLC <info@thethinkery.net> - http://www.thethinkery.net
  */
 
 // No direct access
@@ -55,7 +55,7 @@ class BackupViewBackups extends JViewLegacy
 		$state	= $this->get('State');
 		$canDo	= BackupHelper::getActions($state->get('filter.category_id'));
 
-		JToolBarHelper::title(JText::_('COM_BACKUP_TITLE_BACKUPS'), 'backups.png');
+		JToolBarHelper::title(JText::_('com_smart_backup_TITLE_BACKUPS'), 'backups.png');
 
         //Check if the form exists before showing the add/edit buttons
         $formPath = JPATH_COMPONENT_ADMINISTRATOR.'/views/backup';
@@ -103,11 +103,11 @@ class BackupViewBackups extends JViewLegacy
         }
 
 		if ($canDo->get('core.admin')) {
-			JToolBarHelper::preferences('com_backup');
+			JToolBarHelper::preferences('com_smart_backup');
 		}
         
         //Set sidebar action - New in 3.0
-		JHtmlSidebar::setAction('index.php?option=com_backup&view=backups');
+		JHtmlSidebar::setAction('index.php?option=com_smart_backup&view=backups');
         
         $this->extra_sidebar = '';
         
@@ -130,9 +130,9 @@ class BackupViewBackups extends JViewLegacy
 		'a.id' => JText::_('JGRID_HEADING_ID'),
 		'a.ordering' => JText::_('JGRID_HEADING_ORDERING'),
 		'a.state' => JText::_('JSTATUS'),
-		'a.checked_out' => JText::_('COM_BACKUP_BACKUPS_CHECKED_OUT'),
-		'a.checked_out_time' => JText::_('COM_BACKUP_BACKUPS_CHECKED_OUT_TIME'),
-		'a.created_by' => JText::_('COM_BACKUP_BACKUPS_CREATED_BY'),
+		'a.checked_out' => JText::_('com_smart_backup_BACKUPS_CHECKED_OUT'),
+		'a.checked_out_time' => JText::_('com_smart_backup_BACKUPS_CHECKED_OUT_TIME'),
+		'a.created_by' => JText::_('com_smart_backup_BACKUPS_CREATED_BY'),
 		);
 	}
 

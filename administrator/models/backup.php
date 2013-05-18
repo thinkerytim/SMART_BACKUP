@@ -1,10 +1,10 @@
 <?php
 /**
  * @version     1.0.0
- * @package     com_backup
+ * @package     com_smart_backup
  * @copyright   Copyright (C) 2013. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
- * @author      Julio Delgado <pbass98@gmail.com> - http://
+ * @author      The Thinkery, LLC <info@thethinkery.net> - http://www.thethinkery.net
  */
 
 // No direct access.
@@ -21,7 +21,7 @@ class BackupModelbackup extends JModelAdmin
 	 * @var		string	The prefix to use with controller messages.
 	 * @since	1.6
 	 */
-	protected $text_prefix = 'COM_BACKUP';
+	protected $text_prefix = 'com_smart_backup';
 
 
 	/**
@@ -52,7 +52,7 @@ class BackupModelbackup extends JModelAdmin
 		$app	= JFactory::getApplication();
 
 		// Get the form.
-		$form = $this->loadForm('com_backup.backup', 'backup', array('control' => 'jform', 'load_data' => $loadData));
+		$form = $this->loadForm('com_smart_backup.backup', 'backup', array('control' => 'jform', 'load_data' => $loadData));
 		if (empty($form)) {
 			return false;
 		}
@@ -69,7 +69,7 @@ class BackupModelbackup extends JModelAdmin
 	protected function loadFormData()
 	{
 		// Check the session for previously entered form data.
-		$data = JFactory::getApplication()->getUserState('com_backup.edit.backup.data', array());
+		$data = JFactory::getApplication()->getUserState('com_smart_backup.edit.backup.data', array());
 
 		if (empty($data)) {
 			$data = $this->getItem();

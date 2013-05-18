@@ -2,10 +2,10 @@
 
 /**
  * @version     1.0.0
- * @package     com_backup
+ * @package     com_smart_backup
  * @copyright   Copyright (C) 2013. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
- * @author      Julio Delgado <pbass98@gmail.com> - http://
+ * @author      The Thinkery, LLC <info@thethinkery.net> - http://www.thethinkery.net
  */
 // No direct access
 defined('_JEXEC') or die;
@@ -37,7 +37,7 @@ class BackupTablebackup extends JTable {
         
 		$input = JFactory::getApplication()->input;
 		$task = $input->getString('task', '');
-		if(($task == 'save' || $task == 'apply') && (!JFactory::getUser()->authorise('core.edit.state','com_backup') && $array['state'] == 1)){
+		if(($task == 'save' || $task == 'apply') && (!JFactory::getUser()->authorise('core.edit.state','com_smart_backup') && $array['state'] == 1)){
 			$array['state'] = 0;
 		}
 
@@ -52,9 +52,9 @@ class BackupTablebackup extends JTable {
             $registry->loadArray($array['metadata']);
             $array['metadata'] = (string) $registry;
         }
-        if(!JFactory::getUser()->authorise('core.admin', 'com_backup.backup.'.$array['id'])){
-            $actions = JFactory::getACL()->getActions('com_backup','backup');
-            $default_actions = JFactory::getACL()->getAssetRules('com_backup.backup.'.$array['id'])->getData();
+        if(!JFactory::getUser()->authorise('core.admin', 'com_smart_backup.backup.'.$array['id'])){
+            $actions = JFactory::getACL()->getActions('com_smart_backup','backup');
+            $default_actions = JFactory::getACL()->getAssetRules('com_smart_backup.backup.'.$array['id'])->getData();
             $array_jaccess = array();
             foreach($actions as $action){
                 $array_jaccess[$action->name] = $default_actions[$action->name];
@@ -181,7 +181,7 @@ class BackupTablebackup extends JTable {
     */
     protected function _getAssetName() {
         $k = $this->_tbl_key;
-        return 'com_backup.backup.' . (int) $this->$k;
+        return 'com_smart_backup.backup.' . (int) $this->$k;
     }
  
     /**
@@ -195,7 +195,7 @@ class BackupTablebackup extends JTable {
         // Default: if no asset-parent can be found we take the global asset
         $assetParentId = $assetParent->getRootId();
         // The item has the component as asset-parent
-        $assetParent->loadByName('com_backup');
+        $assetParent->loadByName('com_smart_backup');
         // Return the found asset-parent-id
         if ($assetParent->id){
             $assetParentId=$assetParent->id;

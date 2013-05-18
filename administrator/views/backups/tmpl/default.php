@@ -1,10 +1,10 @@
 <?php
 /**
  * @version     1.0.0
- * @package     com_backup
+ * @package     com_smart_backup
  * @copyright   Copyright (C) 2013. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
- * @author      Julio Delgado <pbass98@gmail.com> - http://
+ * @author      The Thinkery, LLC <info@thethinkery.net> - http://www.thethinkery.net
  */
 
 // no direct access
@@ -17,17 +17,17 @@ JHtml::_('formbehavior.chosen', 'select');
 
 // Import CSS
 $document = JFactory::getDocument();
-$document->addStyleSheet('components/com_backup/assets/css/backup.css');
+$document->addStyleSheet('components/com_smart_backup/assets/css/backup.css');
 
 $user	= JFactory::getUser();
 $userId	= $user->get('id');
 $listOrder	= $this->state->get('list.ordering');
 $listDirn	= $this->state->get('list.direction');
-$canOrder	= $user->authorise('core.edit.state', 'com_backup');
+$canOrder	= $user->authorise('core.edit.state', 'com_smart_backup');
 $saveOrder	= $listOrder == 'a.ordering';
 if ($saveOrder)
 {
-	$saveOrderingUrl = 'index.php?option=com_backup&task=backups.saveOrderAjax&tmpl=component';
+	$saveOrderingUrl = 'index.php?option=com_smart_backup&task=backups.saveOrderAjax&tmpl=component';
 	JHtml::_('sortablelist.sortable', 'backupList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
 }
 $sortFields = $this->getSortFields();
@@ -53,7 +53,7 @@ if (!empty($this->extra_sidebar)) {
 }
 ?>
 
-<form action="<?php echo JRoute::_('index.php?option=com_backup&view=backups'); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php echo JRoute::_('index.php?option=com_smart_backup&view=backups'); ?>" method="post" name="adminForm" id="adminForm">
 <?php if(!empty($this->sidebar)): ?>
 	<div id="j-sidebar-container" class="span2">
 		<?php echo $this->sidebar; ?>
@@ -111,7 +111,7 @@ if (!empty($this->extra_sidebar)) {
                 <?php endif; ?>
                     
 				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_BACKUP_BACKUPS_CREATED_BY', 'a.created_by', $listDirn, $listOrder); ?>
+				<?php echo JHtml::_('grid.sort',  'com_smart_backup_BACKUPS_CREATED_BY', 'a.created_by', $listDirn, $listOrder); ?>
 				</th>
                     
                     
@@ -140,10 +140,10 @@ if (!empty($this->extra_sidebar)) {
 			<tbody>
 			<?php foreach ($this->items as $i => $item) :
 				$ordering   = ($listOrder == 'a.ordering');
-                $canCreate	= $user->authorise('core.create',		'com_backup');
-                $canEdit	= $user->authorise('core.edit',			'com_backup');
-                $canCheckin	= $user->authorise('core.manage',		'com_backup');
-                $canChange	= $user->authorise('core.edit.state',	'com_backup');
+                $canCreate	= $user->authorise('core.create',		'com_smart_backup');
+                $canEdit	= $user->authorise('core.edit',			'com_smart_backup');
+                $canCheckin	= $user->authorise('core.manage',		'com_smart_backup');
+                $canChange	= $user->authorise('core.edit.state',	'com_smart_backup');
 				?>
 				<tr class="row<?php echo $i % 2; ?>">
                     

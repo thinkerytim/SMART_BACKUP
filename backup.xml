@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="1.6.0" method="upgrade">
-    <name>com_backup</name>
+    <name>com_smart_backup</name>
     <creationDate>2013-05-18</creationDate>
     <copyright>Copyright (C) 2013. All rights reserved.</copyright>
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-    <author>Julio Delgado</author>
-    <authorEmail>pbass98@gmail.com</authorEmail>
-    <authorUrl>http://</authorUrl>
+    <author>The Thinkery LLC</author>
+    <authorEmail>info@thethinkery.net</authorEmail>
+    <authorUrl>http://www.thethinkery.net</authorUrl>
     <version>1.0.0</version>
-    <description>Backs stuff up.</description>
+    <description>Creates incremental backups of Joomla site and database, and stores in Cloud storage.</description>
     
     <install> <!-- Runs on install -->
         <sql>
@@ -32,15 +32,12 @@
         <folder>helpers</folder>
     </files>
     <languages folder="site">
-        
-			<language tag="en-GB">language/en-GB.com_backup.ini</language>
+			<language tag="en-GB">language/en-GB.com_smart_backup.ini</language>
     </languages>
     <administration>
-        <menu img="components/com_backup/assets/images/s_com_backup.png" >COM_BACKUP</menu>
+        <menu img="components/com_smart_backup/assets/images/s_com_smart_backup.png" >com_smart_backup</menu>
         <submenu>
-            
-			<menu link="option=com_backup&amp;view=backups" view="backups" img="components/com_backup/assets/images/s_backups.png" alt="Backup/Backups">COM_BACKUP_TITLE_BACKUPS</menu>
-
+			<menu link="option=com_smart_backup&amp;view=backups" view="backups" img="components/com_smart_backup/assets/images/s_backups.png" alt="Backup/Backups">com_smart_backup_TITLE_BACKUPS</menu>
         </submenu>
         <files folder="administrator">
             <filename>access.xml</filename>
@@ -57,11 +54,8 @@
             <folder>views</folder>
         </files>
         <languages folder="administrator">
-            
-			<language tag="en-GB">language/en-GB.com_backup.ini</language>
-			<language tag="en-GB">language/en-GB.com_backup.sys.ini</language>
+			<language tag="en-GB">language/en-GB.com_smart_backup.ini</language>
+			<language tag="en-GB">language/en-GB.com_smart_backup.sys.ini</language>
         </languages>
     </administration>
 </extension>
-<!-- Component built by the Joomla Component Creator -->
-<!-- http://www.notwebdesign.com/joomla-component-creator/ -->
