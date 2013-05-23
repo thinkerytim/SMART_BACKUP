@@ -40,21 +40,20 @@ abstract class SmartBackup
 		$start = microtime(true);
 		$before = memory_get_usage();
 
-		$file_hashes = new StdClass();
-		$dir_hashes = new StdClass();
+		$file_hashes	= new StdClass();
+		$dir_hashes		= new StdClass();
+		$filename		= time().'hashfile.php'; 
+		$save_file		= fopen(JPATH_COMPONENT_ADMINISTRATOR.'/'.$filename, 'w');
 
-		$save_file = fopen(JPATH_COMPONENT_ADMINISTRATOR.'/hashfile.php', 'w');
+		$files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(JPATH_ROOT, FilesystemIterator::SKIP_DOTS));
 
-		$files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($site_root, FilesystemIterator::SKIP_DOTS));
-
-
-		foreach ($files as $filename => $file) {
+		foreach ($files as $fname => $file) {
 			//echo MD5_DIR($dir);
 			 if(is_dir($file)){
-					$dir_hashes->$filename = self::MD5_DIR( $file );
+					$dir_hashes->$fname = self::MD5_DIR( $file );
 					$d++;
 			 } else {
-					$file_hashes->$filename = md5_file( $file );
+					$file_hashes->$fname = md5_file( $file );
 					$i++;	
 			 }
 		}
@@ -76,9 +75,23 @@ abstract class SmartBackup
 		$end = microtime(true);
 		$seconds = ($end - $start);
 		if($this->debug) JLog::add($i." files, ".$d." directories processed in ".$seconds." seconds.");
-		
+		return $filename;
 	}
 	
+	/**
+	 * Compares two hashfiles and returns modified, new, deleted.
+	 *
+	 * @param	string	Ignore list- array of directories to ignore.
+	 * @param	string	Ignore list- array of directories to ignore.
+	 * @return	string	Filename of new hashfile
+	 * @since	1.0
+	 */
+	public static function compareHashes($old, $new)
+	{
+		
+	}
+
+
 	private function MD5_DIR($dir)
 	{
 		if (!is_dir($dir))
