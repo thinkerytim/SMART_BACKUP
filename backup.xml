@@ -20,24 +20,11 @@
             <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
         </sql>
     </uninstall>
-
-    <files folder="site">
-        <filename>index.html</filename>
-        <filename>backup.php</filename>
-        <filename>controller.php</filename>
-        <filename>router.php</filename>
-        <folder>views</folder>
-        <folder>models</folder>
-        <folder>controllers</folder>
-        <folder>helpers</folder>
-    </files>
-    <languages folder="site">
-			<language tag="en-GB">language/en-GB.com_smart_backup.ini</language>
-    </languages>
     <administration>
         <menu img="components/com_smart_backup/assets/images/s_com_smart_backup.png" >com_smart_backup</menu>
         <submenu>
-			<menu link="option=com_smart_backup&amp;view=backups" view="backups" img="components/com_smart_backup/assets/images/s_backups.png" alt="Backup/Backups">COM_SMART_BACKUP_TITLE_BACKUPS</menu>
+			<menu link="option=com_smart_backup&view=backups" view="backups" img="components/com_smart_backup/assets/images/s_backups.png" alt="Backup/Backups">COM_SMART_BACKUP_TITLE_BACKUPS</menu>
+			<menu link="option=com_smart_backup&view=settings" view="settings" img="components/com_smart_backup/assets/images/s_backups.png" alt="Backup/Settings">COM_SMART_BACKUP_TITLE_SETTINGS</menu>
         </submenu>
         <files folder="administrator">
             <filename>access.xml</filename>
@@ -52,6 +39,7 @@
             <folder>sql</folder>
             <folder>tables</folder>
             <folder>views</folder>
+			<folder>tmp</folder>
         </files>
         <languages folder="administrator">
 			<language tag="en-GB">language/en-GB.com_smart_backup.ini</language>

@@ -31,7 +31,7 @@ abstract class SmartBackup
 	 * Creates an ini file with path / hash pairs for all files in site.
 	 *
 	 * @param	array	Ignore list- array of directories to ignore.
-	 * @return	string	Filename of new hasfile
+	 * @return	string	Filename of new hashfile
 	 * @since	1.0
 	 */
 	public static function createHashfile(){
@@ -43,7 +43,7 @@ abstract class SmartBackup
 		$file_hashes = new StdClass();
 		$dir_hashes = new StdClass();
 
-		$save_file = fopen('hashfile.php', 'w');
+		$save_file = fopen(JPATH_COMPONENT_ADMINISTRATOR.'/hashfile.php', 'w');
 
 		$files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($site_root, FilesystemIterator::SKIP_DOTS));
 
@@ -51,7 +51,7 @@ abstract class SmartBackup
 		foreach ($files as $filename => $file) {
 			//echo MD5_DIR($dir);
 			 if(is_dir($file)){
-					$dir_hashes->$filename = MD5_DIR( $file );
+					$dir_hashes->$filename = self::MD5_DIR( $file );
 					$d++;
 			 } else {
 					$file_hashes->$filename = md5_file( $file );
@@ -71,12 +71,11 @@ abstract class SmartBackup
 		fclose($save_file);
 		$after = memory_get_usage();
 
-
-		echo (($after - $before) / 1024 / 1024).' MB used';
+		if($this->debug) JLog::add("Created hasfile: ".($after - $before) / 1024 / 1024 .' MB memory used');
 
 		$end = microtime(true);
 		$seconds = ($end - $start);
-		echo $i." files process in ".$seconds;
+		if($this->debug) JLog::add($i." files, ".$d." directories processed in ".$seconds." seconds.");
 		
 	}
 	
